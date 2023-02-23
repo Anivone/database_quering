@@ -2,6 +2,7 @@ import express from "express";
 import neo4j  from "neo4j-driver";
 import mySqlConnection from "./sql/config";
 import { clearDatabases, initializeDatabases } from "./utils/databaseUtils";
+import { MongoClient } from "mongodb";
 import mysqlRouter from "./sql/routes/router";
 
 const app = express();
@@ -16,7 +17,14 @@ mySqlConnection.connect((err) => {
     if (err) {
         throw err;
     }
-})
+});
+
+const url = "mongodb://root:password@localhost:27018";
+const client = new MongoClient(url);
+const dbName = "database_quering";
+
+client.connect().catch((err) => console.error(err));
+const mongoDb = client.db(dbName);
 
 app.use('/mysql', mysqlRouter)
 
@@ -126,7 +134,13 @@ app.delete("/neo4j/clear", async (req, res) => {
 });
 
 app.listen(PORT, async () => {
+    const session = driver.session();
+
+    await clearDatabases(session);
+    await initializeDatabases(session);
+
+    await session.close();
     console.log("Server is listening on port ", PORT);
-    await clearDatabases();
-    await initializeDatabases();
+
+    await mongoDb.createCollection("test");
 });

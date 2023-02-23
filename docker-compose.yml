@@ -2,6 +2,7 @@ version: '3'
 services:
   neo4j:
     image: neo4j
+    restart: on-failure
     environment:
       NEO4J_AUTH: neo4j/password
     ports:
@@ -9,6 +10,7 @@ services:
       - "7687:7687"
   mysql:
     image: mysql
+    restart: on-failure
     environment:
       MYSQL_DATABASE: 'db'
       MYSQL_USER: 'user'
@@ -18,3 +20,14 @@ services:
       - '3307:3306'
     expose:
       - '3307'
+  mongo:
+    image: mongo
+    restart: on-failure
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_INITDB_DATABASE: database_quering
+    ports:
+      - '27018:27017'
+    expose:
+      - '27018'

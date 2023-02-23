@@ -1,4 +1,6 @@
-export const users = [
+import { Hobby, Resume, ResumeHobby, User } from "./types";
+
+export const users: User[] = [
   { id: 1, login: "user1", password: "password1" },
   { id: 2, login: "user2", password: "password2" },
   { id: 3, login: "user3", password: "password3" },
@@ -9,7 +11,7 @@ export const users = [
   { id: 8, login: "user8", password: "password8" },
 ];
 
-export const resumes = [
+export const resumes: Resume[] = [
   {
     id: 1,
     userId: 1,
@@ -84,7 +86,7 @@ export const resumes = [
   },
 ];
 
-export const hobbies = [
+export const hobbies: Hobby[] = [
   { id: 1, name: 'Reading' },
   { id: 2, name: 'Playing sports' },
   { id: 3, name: 'Gardening' },
@@ -97,7 +99,7 @@ export const hobbies = [
   { id: 10, name: 'Photography' },
 ];
 
-export const resumesHobbies = [
+export const resumesHobbies: ResumeHobby[] = [
   { id: 1, resumeId: 1, hobbyId: 1 },
   { id: 2, resumeId: 1, hobbyId: 3 },
   { id: 3, resumeId: 2, hobbyId: 2 },

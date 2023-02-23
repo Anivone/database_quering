@@ -12,67 +12,102 @@ export const users = [
 export const resumes = [
   {
     id: 1,
-    name: "Mark",
-    surname: "Johnson",
+    userId: 1,
     description: "Lorem open",
+    previousJob: "Google",
     experience: 1,
-    previousJob: "",
     city: "Kyiv",
+    hobbies: [1, 9]
   },
   {
     id: 2,
-    name: "John",
-    surname: "Harden",
+    userId: 2,
     description: "Lorem open",
+    previousJob: "Amazon",
     experience: 4,
-    city: "Dnipro"
+    city: "Dnipro",
+    hobbies: [2, 5]
   },
   {
     id: 3,
-    name: "James",
-    surname: "Gordon",
+    userId: 3,
     description: "Lorem open",
+    previousJob: "Netflix",
     experience: 10,
-    city: "Lviv"
+    city: "Lviv",
+    hobbies: [8,2]
   },
   {
     id: 4,
-    name: "Ja",
-    surname: "Morant",
+    userId: 4,
     description: "Lorem open",
+    previousJob: "Meta",
     experience: 3,
-    city: "Kharkiv"
+    city: "Kharkiv",
+    hobbies: [3, 6, 10]
   },
   {
     id: 5,
-    name: "Bradley",
-    surname: "Beal",
+    userId: 5,
+    description: "Lorem open",
+    previousJob: "Meta",
     experience: 6,
-    city: "Chernihiv"
+    city: "Chernihiv",
+    hobbies: [7,3]
   },
   {
     id: 6,
-    name: "Eric",
-    surname: "Anthony",
+    userId: 6,
     description: "Lorem open",
+    previousJob: "Google",
     experience: 1,
-    city: "Chernivtsi"
+    city: "Chernivtsi",
+    hobbies: [8, 10]
   },
   {
     id: 7,
-    name: "Stephen",
-    surname: "Curry",
+    userId: 7,
     description: "Lorem open",
+    previousJob: "Google",
     experience: 8,
-    city: "Ivano-Frankivsk"
+    city: "Ivano-Frankivsk",
+    hobbies: [2, 4, 9]
   },
   {
     id: 8,
-    name: "Anthony",
-    surname: "Davis",
+    userId: 8,
     description: "Lorem open",
+    previousJob: "Apple",
     experience: 15,
-    city: "Odessa"
+    city: "Odessa",
+    hobbies: [3,9]
   },
 ];
 
+export const hobbies = [
+  { id: 1, name: 'Reading' },
+  { id: 2, name: 'Playing sports' },
+  { id: 3, name: 'Gardening' },
+  { id: 4, name: 'Cooking' },
+  { id: 5, name: 'Hiking' },
+  { id: 6, name: 'Drawing' },
+  { id: 7, name: 'Playing music' },
+  { id: 8, name: 'Watching movies' },
+  { id: 9, name: 'Traveling' },
+  { id: 10, name: 'Photography' },
+];
+
+export const resumesHobbies = [
+  { id: 1, resumeId: 1, hobbyId: 1 },
+  { id: 2, resumeId: 1, hobbyId: 3 },
+  { id: 3, resumeId: 2, hobbyId: 2 },
+  { id: 4, resumeId: 3, hobbyId: 6 },
+  { id: 5, resumeId: 4, hobbyId: 9 },
+  { id: 6, resumeId: 4, hobbyId: 10 },
+  { id: 7, resumeId: 5, hobbyId: 4 },
+  { id: 8, resumeId: 5, hobbyId: 7 },
+  { id: 9, resumeId: 5, hobbyId: 9 },
+  { id: 10, resumeId: 6, hobbyId: 5 },
+  { id: 11, resumeId: 6, hobbyId: 8 },
+  { id: 12, resumeId: 8, hobbyId: 7 },
+];

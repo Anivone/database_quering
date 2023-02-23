@@ -63,7 +63,7 @@ export const resumes: Resume[] = [
     description: "Lorem open",
     previousJob: "Google",
     experience: 1,
-    city: "Chernivtsi",
+    city: "Kyiv",
     hobbies: [8, 10]
   },
   {
@@ -97,6 +97,7 @@ export const hobbies: Hobby[] = [
   { id: 8, name: 'Watching movies' },
   { id: 9, name: 'Traveling' },
   { id: 10, name: 'Photography' },
+  { id: 11, name: 'unique' },
 ];
 
 export const resumesHobbies: ResumeHobby[] = [
@@ -109,7 +110,7 @@ export const resumesHobbies: ResumeHobby[] = [
   { id: 7, resumeId: 5, hobbyId: 4 },
   { id: 8, resumeId: 5, hobbyId: 7 },
   { id: 9, resumeId: 5, hobbyId: 9 },
-  { id: 10, resumeId: 6, hobbyId: 5 },
+  { id: 10, resumeId: 6, hobbyId: 3 },
   { id: 11, resumeId: 6, hobbyId: 8 },
   { id: 12, resumeId: 8, hobbyId: 7 },
 ];

@@ -2,6 +2,7 @@ import express from "express";
 import neo4j  from "neo4j-driver";
 import mySqlConnection from "./sql/config";
 import { clearDatabases, initializeDatabases } from "./utils/databaseUtils";
+import mysqlRouter from "./sql/routes/router";
 
 const app = express();
 const PORT = 3000;
@@ -16,6 +17,8 @@ mySqlConnection.connect((err) => {
         throw err;
     }
 })
+
+app.use('/mysql', mysqlRouter)
 
 app.get("/", async (req, res) => {
     const session = driver.session();

@@ -3,15 +3,12 @@ import neo4j  from "neo4j-driver";
 import mySqlConnection from "./sql/config";
 import { clearDatabases, initializeDatabases } from "./utils/databaseUtils";
 import { MongoClient } from "mongodb";
-import mysqlRouter from "./sql/routes/router";
+import mySqlRouter from "./sql/routes/router";
+import driver from "./neo4j/config"
+import neo4jRouter from "./neo4j/routes/router";
 
 const app = express();
 const PORT = 3000;
-
-const driver = neo4j.driver(
-    "bolt://localhost:7687",
-    neo4j.auth.basic("neo4j", "password")
-);
 
 mySqlConnection.connect((err) => {
     if (err) {
@@ -26,7 +23,8 @@ const dbName = "database_quering";
 client.connect().catch((err) => console.error(err));
 const mongoDb = client.db(dbName);
 
-app.use('/mysql', mysqlRouter)
+app.use('/mysql', mySqlRouter)
+app.use('/neo4j', neo4jRouter)
 
 app.get("/", async (req, res) => {
     const session = driver.session();

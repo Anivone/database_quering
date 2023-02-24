@@ -7,13 +7,13 @@ import {
   getSamePreviousJob
 } from "./controller";
 
-const mysqlRouter = express.Router()
+const mySqlRouter = express.Router()
 
-mysqlRouter.get('/getResumes', getResumes)
-mysqlRouter.get('/getAllResumesHobby', getAllResumesHobby)
-mysqlRouter.get('/getAllCityFromResume', getAllCityFromResume)
-mysqlRouter.get('/getAllHobbyByCity/:city', getAllHobbyByCity)
-mysqlRouter.get('/getSamePreviousJob', getSamePreviousJob)
+mySqlRouter.get('/getResumes', getResumes)
+mySqlRouter.get('/getAllResumesHobby', getAllResumesHobby)
+mySqlRouter.get('/getAllCityFromResume', getAllCityFromResume)
+mySqlRouter.get('/getAllHobbyByCity/:city', getAllHobbyByCity)
+mySqlRouter.get('/getSamePreviousJob', getSamePreviousJob)
 
 
-export default mysqlRouter
+export default mySqlRouter

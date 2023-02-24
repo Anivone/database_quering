@@ -1,7 +1,6 @@
 import { Session } from "neo4j-driver";
 import { hobbies, resumes, users } from "../data/data";
 import to from "await-to-js";
-import { Resume } from "../data/types";
 
 export const clearNeo4jDatabase = async (session: Session) => {
   await session.run("MATCH (n) DETACH DELETE n");

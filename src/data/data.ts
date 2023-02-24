@@ -19,7 +19,7 @@ export const resumes: Resume[] = [
     previousJob: "Google",
     experience: 1,
     city: "Kyiv",
-    hobbies: [1, 9]
+    hobbies: [1, 3]
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ export const resumes: Resume[] = [
     previousJob: "Amazon",
     experience: 4,
     city: "Dnipro",
-    hobbies: [2, 5]
+    hobbies: [2]
   },
   {
     id: 3,
@@ -37,7 +37,7 @@ export const resumes: Resume[] = [
     previousJob: "Netflix",
     experience: 10,
     city: "Lviv",
-    hobbies: [8,2]
+    hobbies: [6]
   },
   {
     id: 4,
@@ -46,7 +46,7 @@ export const resumes: Resume[] = [
     previousJob: "Meta",
     experience: 3,
     city: "Kharkiv",
-    hobbies: [3, 6, 10]
+    hobbies: [9, 10]
   },
   {
     id: 5,
@@ -55,7 +55,7 @@ export const resumes: Resume[] = [
     previousJob: "Meta",
     experience: 6,
     city: "Chernihiv",
-    hobbies: [7,3]
+    hobbies: [4, 7, 9]
   },
   {
     id: 6,
@@ -64,7 +64,7 @@ export const resumes: Resume[] = [
     previousJob: "Google",
     experience: 1,
     city: "Kyiv",
-    hobbies: [8, 10]
+    hobbies: [3, 8]
   },
   {
     id: 7,
@@ -73,7 +73,7 @@ export const resumes: Resume[] = [
     previousJob: "Google",
     experience: 8,
     city: "Ivano-Frankivsk",
-    hobbies: [2, 4, 9]
+    hobbies: []
   },
   {
     id: 8,
@@ -82,7 +82,7 @@ export const resumes: Resume[] = [
     previousJob: "Apple",
     experience: 15,
     city: "Odessa",
-    hobbies: [3,9]
+    hobbies: [7]
   },
 ];
 

@@ -16,7 +16,7 @@ export const initializeNeo4jDatabase = async (session: Session) => {
   await createResumesHobbiesRelationships(session);
 };
 
-export const createUsersNodes = async (session: Session) => {
+const createUsersNodes = async (session: Session) => {
   const [err] = await to(
     session.run(
       `
@@ -29,7 +29,7 @@ export const createUsersNodes = async (session: Session) => {
   if (err) throw err;
 };
 
-export const createResumesNodes = async (session: Session) => {
+const createResumesNodes = async (session: Session) => {
   const [err] = await to(
     session.run(
       `
@@ -42,7 +42,7 @@ export const createResumesNodes = async (session: Session) => {
   if (err) throw err;
 };
 
-export const createHobbiesNodes = async (session: Session) => {
+const createHobbiesNodes = async (session: Session) => {
   const [err] = await to(
     session.run(
       `
@@ -55,7 +55,7 @@ export const createHobbiesNodes = async (session: Session) => {
   if (err) throw err;
 };
 
-export const createUsersResumesRelationships = async (
+const createUsersResumesRelationships = async (
   session: Session
 ) => {
   const [err] = await to(session.run(`
@@ -67,7 +67,7 @@ export const createUsersResumesRelationships = async (
   if (err) throw err;
 };
 
-export const createResumesHobbiesRelationships = async (
+const createResumesHobbiesRelationships = async (
   session: Session
 ) => {
   const [err] = await to(session.run(`

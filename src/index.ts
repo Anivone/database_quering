@@ -136,11 +136,9 @@ app.delete("/neo4j/clear", async (req, res) => {
 app.listen(PORT, async () => {
     const session = driver.session();
 
-    await clearDatabases(session);
-    await initializeDatabases(session);
+    await clearDatabases(session, mongoDb);
+    await initializeDatabases(session, mongoDb);
 
     await session.close();
     console.log("Server is listening on port ", PORT);
-
-    await mongoDb.createCollection("test");
 });

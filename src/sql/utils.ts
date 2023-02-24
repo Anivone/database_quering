@@ -53,7 +53,7 @@ export const initializeSqlDatabase = async (
   });
 };
 
-export const createUsersTableQuery = `
+const createUsersTableQuery = `
     CREATE TABLE users (
         id INT NOT NULL,
         login VARCHAR(255) NOT NULL,
@@ -62,7 +62,7 @@ export const createUsersTableQuery = `
     );
 `;
 
-export const createResumesTableQuery = `
+const createResumesTableQuery = `
     CREATE TABLE resumes (
         id INT NOT NULL,
         user_id INT NOT NULL,
@@ -75,7 +75,7 @@ export const createResumesTableQuery = `
     );
   `;
 
-export const createHobbiesTableQuery = `
+const createHobbiesTableQuery = `
     CREATE TABLE hobbies (
         id INT NOT NULL,
         name VARCHAR(255) NOT NULL,
@@ -83,7 +83,7 @@ export const createHobbiesTableQuery = `
     );
 `;
 
-export const createResumesHobbiesTableQuery = `
+const createResumesHobbiesTableQuery = `
   CREATE TABLE resumes_hobbies (
         id INT NOT NULL,
         resume_id INT NOT NULL,
@@ -94,44 +94,44 @@ export const createResumesHobbiesTableQuery = `
   );
 `;
 
-export const getFillUsersTableQuery = (users: User[]) =>
+const getFillUsersTableQuery = (users: User[]) =>
   `
     INSERT INTO users(id, login, password)
     VALUES ${users.map(userToValues).join(",")}
 `;
 
-export const getFillResumesTableQuery = (resumes: Resume[]) => `
+const getFillResumesTableQuery = (resumes: Resume[]) => `
   INSERT INTO resumes(id, user_id, description, previous_job, experience, city)
   VALUES ${resumes.map(resumeToValues).join(",")}
 `;
 
-export const getFillHobbiesTableQuery = (hobbies: Hobby[]) => `
+const getFillHobbiesTableQuery = (hobbies: Hobby[]) => `
   INSERT INTO hobbies(id, name)
   VALUES ${hobbies.map(hobbyToValues).join(",")}
 `;
 
-export const getFillResumesHobbiesTableQuery = (
+const getFillResumesHobbiesTableQuery = (
   resumesHobbies: ResumeHobby[]
 ) => `
   INSERT INTO resumes_hobbies(id, resume_id, hobby_id)
   VALUES ${resumesHobbies.map(resumeHobbyToValues).join(",")}
 `;
 
-export const userToValues = (user: User) => {
+const userToValues = (user: User) => {
   const { id, login, password } = user;
   return `(${id}, '${login}', '${password}')`;
 };
-export const resumeToValues = (resume: Resume) => {
+const resumeToValues = (resume: Resume) => {
   const { id, userId, description, previousJob, experience, city } = resume;
   return `(${id}, ${userId}, '${description}', '${previousJob}', ${experience}, '${city}')`;
 };
 
-export const hobbyToValues = (hobby: Hobby) => {
+const hobbyToValues = (hobby: Hobby) => {
   const { id, name } = hobby;
   return `(${id}, '${name}')`;
 };
 
-export const resumeHobbyToValues = (resumeHobby: ResumeHobby) => {
+const resumeHobbyToValues = (resumeHobby: ResumeHobby) => {
   const { id, resumeId, hobbyId } = resumeHobby;
   return `(${id}, ${resumeId}, ${hobbyId})`;
 };
